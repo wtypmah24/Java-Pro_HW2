@@ -39,7 +39,7 @@ public class CommandLineParser {
         }
 
         if (dataType == null) throw new CommandLineParserException("You have to enter a valid data type");
-        if (outputFileName == null) throw new CommandLineParserException("You have not entered the output file name");
+//        if (outputFileName == null) throw new CommandLineParserException("You have not entered the output file name");
         if (inputFiles.isEmpty()) throw new CommandLineParserException("You have not provided input files");
 
         return new SortingSetting(increaseMethod, dataType, outputFileName, inputFiles);
