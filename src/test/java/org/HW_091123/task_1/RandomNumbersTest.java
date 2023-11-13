@@ -5,8 +5,7 @@ import org.mockito.Mockito;
 
 import java.util.Random;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 class RandomNumbersTest {
     RandomNumbers randomNumbers = new RandomNumbers();
@@ -22,5 +21,21 @@ class RandomNumbersTest {
     @Test
     void checkIfMethodThrowsException(){
         assertThrows(IllegalArgumentException.class, () -> randomNumbers.getRandomEvenInteger(null));
+    }
+
+    @Test
+    void checkLimits(){
+        for (int i = 0; i < 1000; i++){
+            int result = randomNumbers.getRandomEvenInteger(new Random());
+            assertTrue(result >= -100 && result <= 100);
+        }
+    }
+
+    @Test
+    void checkForEvenNumbers(){
+        for (int i = 0; i < 1000; i++){
+            int result = randomNumbers.getRandomEvenInteger(new Random());
+            assertTrue(result % 2 != 0);
+        }
     }
 }
