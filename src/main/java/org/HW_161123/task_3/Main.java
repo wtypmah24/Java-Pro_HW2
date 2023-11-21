@@ -2,9 +2,6 @@ package org.HW_161123.task_3;
 
 import org.HW_161123.task_3.employee.Employee;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 
 public class Main {
@@ -20,10 +17,7 @@ public class Main {
                 LocalDate.of(1980, 8, 6),
                 100.5);
 
-        try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("employee.dat"))) {
-            oos.writeObject(employee1);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        employee1.serialize("employee1.dat");
     }
+
 }
