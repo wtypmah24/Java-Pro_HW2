@@ -14,6 +14,8 @@ public class Main {
         String target = "a";
 
         System.out.println(removeIf(toBeCleaned, s -> s.startsWith(target)));
+
+        //System.out.println(toBeCleaned.removeIf(x -> x.startsWith(target)));
     }
 
     private static List<String> removeIf(List<String> input, Predicate<String> predicate) {
