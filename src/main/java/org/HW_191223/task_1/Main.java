@@ -19,7 +19,6 @@ public class Main {
     * выполнять операции чтения и записи ресурса только одному потоку.*/
     public static void main(String[] args) {
         CommonFile commonFile = new CommonFile("hw191223.txt");
-        // Create and start multiple user threads
         Thread user1 = new Thread(new User("User 1", commonFile));
         Thread user2 = new Thread(new User("User 2", commonFile));
 
