@@ -34,7 +34,7 @@ public class Main {
 
         deliveryScheduler.scheduleAtFixedRate(
                 new DeliveryTaskScheduler(deliveryQueue),
-                1, 2, TimeUnit.SECONDS // Adjust the delay and period as needed
+                1, 2, TimeUnit.SECONDS
         );
 
         orderProcessingExecutor.shutdown();
